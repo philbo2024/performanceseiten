@@ -1,0 +1,39 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Über uns",
+      "url": "/about"
+    },
+    {
+      "name": "Leistungen",
+      "url": "/integrations"
+    },
+    {
+      "name": "Vorteile",
+      "url": "/features"
+    },
+    {
+      "name": "Wie wir arbeiten",
+      "url": "/how-it-works"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Über uns",
+      "url": "/about"
+    },
+    {
+      "name": "Kontakt",
+      "url": "/contact"
+    },
+    {
+      "name": "Datenschutz",
+      "url": "/datenschutz"
+    }
+  ]
+}

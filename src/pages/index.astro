@@ -1,16 +1,25 @@
 ---
+import Base from "@/layouts/Base.astro";
+import Banner from "@/layouts/components/Banner.astro";
+import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
+import Testimonial from "@/layouts/components/Testimonial.astro";
+import Service from "@/layouts/components/Service.astro";
+import Cta from "@/layouts/partials/Cta.astro";
+import { getEntryBySlug } from "astro:content";
 
+const homepage = await getEntryBySlug("homepage", "index");
+const { banner, key_features, service, testimonial } = homepage.data;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <!-- banner -->
+  <Banner banner={banner} />
+  <!-- key features -->
+  <KeyFeatures key_features={key_features} />
+  <!-- service -->
+  <Service service={service} />
+  <!-- testimonial -->
+  <Testimonial testimonial={testimonial} />
+  <!-- call to action -->
+  <Cta />
+</Base>

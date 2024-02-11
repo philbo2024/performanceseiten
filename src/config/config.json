@@ -1,0 +1,49 @@
+{
+  "site": {
+    "title": "Performance Seiten",
+    "base_url": "https://pinwheel-astro.vercel.app",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon256.png",
+    "logo": "/images/logo.png",
+    "logo_width": "220",
+    "logo_height": "75",
+    "logo_text": "Performance Seiten"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100,
+    "blog_folder": "blog"
+  },
+
+  "call_to_action": {
+    "title": "Webseiten, die mehr Umsatz bringen",
+    "description": "Wir entwickeln deine hochperformante Webseite, die Interessenten in zahlende Kunden verwandelt.",
+    "button": {
+      "label": "Jetzt Angebot anfordern",
+      "link": "https://tidycal.com/10p5nv3/30-minute-meeting"
+    }
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "performance-seiten",
+    "settings": {}
+  },
+
+  "params": {
+    "footer_description": "Wir arbeiten mit Hochpreis Dienstleistern zusammen, um beeindruckende Webseiten zu kreieren, welche die Identität ihrer Marke widerspiegeln und ihnen nachweislich mehr Umsatz bringen.    ",
+    "email": "info@performance-seiten.de",
+    "location": "Kirchrasenstraße 7, 36154 Hosenfeld",
+    "phone": "+49 151 5488 2470",
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2024 Performance Seiten"
+  },
+
+  "metadata": {
+    "meta_author": "Performance Seiten",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "performance seiten"
+  }
+}
