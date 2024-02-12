@@ -19,9 +19,11 @@ jobs:
       branch-id: ${{ fromJson(steps.project.outputs.info).branch-id }}
     steps:
       - name: Fetch project data
-        uses: ionos-deploy-now/project-action@v1
+        uses: ionos-deploy-now/project-action@v4
         id: project
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ecb1e92d-d4ed-4211-bd24-a9940d197b51
@@ -46,8 +48,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch deployment(s)
-        uses: ionos-deploy-now/project-action@v1
+        uses: ionos-deploy-now/project-action@v4
         with:
+
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ecb1e92d-d4ed-4211-bd24-a9940d197b51
