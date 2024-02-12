@@ -49,7 +49,7 @@ jobs:
           status: in_progress
 
       - name: Retrieve stored deployment
-        uses: ionos-deploy-now/artifact-action@v1
+        uses: ionos-deploy-now/artifact-action@v4
         with:
           node-version: v20.x
 
@@ -74,9 +74,11 @@ jobs:
           action: retrieve-info
 
       - name: Render templates
-        uses: ionos-deploy-now/template-renderer-action@v2
+        uses: ionos-deploy-now/template-renderer-action@v4
         id: template
         with:
+          node-version: v20.x
+
           deployment-id: ${{ matrix.deployment-id }}
           data: "[${{ steps.deployment.outputs.template-variables }}, ${{ toJson(secrets) }}]"
           input-directory: deployment
@@ -93,8 +95,10 @@ jobs:
         run: echo SSH_USERNAME_SECRET=IONOS_DEPLOYMENT_`echo ${{ matrix.deployment-id }} | tr '[:lower:]' '[:upper:]' | tr '-' '_'`_SSH_USERNAME >> $GITHUB_ENV
 
       - name: Deploy to IONOS
-        uses: ionos-deploy-now/deploy-to-ionos-action@v2
+        uses: ionos-deploy-now/deploy-to-ionos-action@v4
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
