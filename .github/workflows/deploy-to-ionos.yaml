@@ -36,8 +36,10 @@ jobs:
         deployment-id: ${{ fromJson(inputs.deployment-ids) }}
     steps:
       - name: Update deployment status
-        uses: ionos-deploy-now/project-action@v3
+        uses: ionos-deploy-now/project-action@v4
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -49,6 +51,8 @@ jobs:
       - name: Retrieve stored deployment
         uses: ionos-deploy-now/artifact-action@v1
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -57,9 +61,11 @@ jobs:
           action: download
 
       - name: Fetch deployment info
-        uses: ionos-deploy-now/project-action@v3
+        uses: ionos-deploy-now/project-action@v4
         id: deployment
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -100,8 +106,10 @@ jobs:
 
       - name: Update deployment status
         if: ${{ always() }}
-        uses: ionos-deploy-now/project-action@v3
+        uses: ionos-deploy-now/project-action@v4
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -116,8 +124,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Notify all deployments finished
-        uses: ionos-deploy-now/project-action@v3
+        uses: ionos-deploy-now/project-action@v4
         with:
+          node-version: v20.x
+
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
