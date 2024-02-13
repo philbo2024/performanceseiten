@@ -38,6 +38,7 @@ jobs:
       - name: Update deployment status
         uses: ionos-deploy-now/project-action@v1
         with:
+          node-version: v20.x
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -60,6 +61,7 @@ jobs:
         uses: ionos-deploy-now/project-action@v1
         id: deployment
         with:
+          node-version: v20.x
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -102,6 +104,7 @@ jobs:
         if: ${{ always() }}
         uses: ionos-deploy-now/project-action@v1
         with:
+          node-version: v20.x
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
@@ -118,6 +121,7 @@ jobs:
       - name: Notify all deployments finished
         uses: ionos-deploy-now/project-action@v1
         with:
+          node-version: v20.x
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: ${{ inputs.project-id }}
