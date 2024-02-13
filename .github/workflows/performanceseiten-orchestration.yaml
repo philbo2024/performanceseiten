@@ -22,6 +22,7 @@ jobs:
         uses: ionos-deploy-now/project-action@v1
         id: project
         with:
+          node-version: v20.x
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: b80ddc68-5753-4535-af05-4d37787abf91
@@ -48,6 +49,7 @@ jobs:
       - name: Dispatch deployment(s)
         uses: ionos-deploy-now/project-action@v1
         with:
+          node-version: v20.x
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
           project-id: b80ddc68-5753-4535-af05-4d37787abf91
